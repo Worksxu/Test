@@ -232,6 +232,9 @@ public class WeightActivity extends SaoMiaoActivity{
 		return false;
 	}
 
-	
+	public void add(){
+		int a = 1;
+		a++;
+	}
 
 }
