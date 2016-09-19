@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#f8f8f8">
+    
+    <RelativeLayout 
+        android:id="@+id/rl_rg"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+     <RadioGroup 
+        android:id="@+id/rg_select"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+       >
+
+        <RadioButton
+            android:id="@+id/rb_unfinsh"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:background="@drawable/radiobutton"
+             style="@style/RadioTopStyle"
+            android:text="收入" 
+            android:gravity="center"
+            android:checked="true"
+          />
+
+        <RadioButton 
+            android:id="@+id/rb_finsh"
+            android:layout_width="wrap_content"
+            android:layout_height="40dp"
+            android:text="支出"
+            android:background="@drawable/radiobutton_right"
+             style="@style/RadioTopStyle"
+              android:gravity="center"
+              />
+        
+        
+    </RadioGroup>
+        
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="#fff"
+        
+        >
+     <LinearLayout
+        android:id="@+id/ll_home_hours"
+        android:layout_width="match_parent"
+        android:layout_height="60dp"
+        android:orientation="horizontal">
+        <RelativeLayout 
+            android:id="@+id/rl_home_hours"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical">
+            <TextView 
+                android:id="@+id/tv_home_hours"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="收入总额"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_centerHorizontal="true"/>
+
+            <TextView
+                android:id="@+id/tv_home_hours_count"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignLeft="@+id/tv_home_hours"
+                android:layout_alignParentBottom="true"
+                android:text="@string/action_hours_connet"
+                android:textSize="16sp"
+                android:layout_marginTop="8dp"
+                android:textColor="#FF3333" />
+
+            <TextView
+                android:id="@+id/tv_home_hour"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignBaseline="@+id/tv_home_hours_count"
+                android:layout_alignBottom="@+id/tv_home_hours_count"
+                android:layout_toRightOf="@+id/tv_home_hours_count"
+                android:text="天"
+                android:textColor="@color/home_connet_hours"
+                android:textSize="11sp"
+                android:visibility="gone" />
+            
+        </RelativeLayout>
+        <View 
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="#ddd"/>
+        <RelativeLayout 
+            android:id="@+id/rl_home_orders"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical">
+            
+            <TextView 
+                android:id="@+id/tv_home_orders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:text="支出总额"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_centerHorizontal="true"/>
+
+              <TextView
+                  android:id="@+id/tv_home_orders_count"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_alignLeft="@+id/tv_home_orders"
+                  android:layout_below="@+id/tv_home_orders"
+                  android:text="@string/action_hours_connet"
+                  android:textColor="#FF3333"
+                  android:textSize="16sp"
+                 />
+
+               <TextView
+                   android:id="@+id/tv_home_order"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignBaseline="@+id/tv_home_orders_count"
+                   android:layout_alignBottom="@+id/tv_home_orders_count"
+                   android:layout_toRightOf="@+id/tv_home_orders_count"
+                   android:text="单"
+                   android:textColor="@color/home_connet_hours"
+                   android:textSize="11sp" 
+                   android:visibility="gone"/>
+            
+        </RelativeLayout>
+        
+        <View 
+            android:layout_width="1dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical"
+            android:background="#ddd"/>
+        
+        <RelativeLayout 
+            android:id="@+id/rl_home_paiming"
+            android:layout_width="120dp"
+            android:layout_height="40dp"
+            android:layout_gravity="center_vertical" >
+               
+            <TextView 
+                android:id="@+id/tv_home_paimings"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                 android:text="当前余额"
+                android:textSize="12sp"
+                android:textColor="#666666"
+                android:layout_centerHorizontal="true"/>
+
+               <TextView
+                   android:id="@+id/tv_home_paiming"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignBaseline="@+id/tv_home_paimings_count"
+                   android:layout_alignBottom="@+id/tv_home_paimings_count"
+                   android:layout_toRightOf="@+id/tv_home_paimings_count"
+                   android:text="名"
+                   android:textColor="@color/home_connet_hours"
+                   android:textSize="11sp" 
+                   android:visibility="gone"/>
+
+               <TextView
+                   android:id="@+id/tv_home"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignBaseline="@+id/tv_home_paimings_count"
+                   android:layout_alignBottom="@+id/tv_home_paimings_count"
+                   android:layout_alignLeft="@+id/tv_home_paimings"
+                   android:text="第"
+                   android:textColor="@color/home_connet_hours"
+                   android:textSize="11sp" 
+                   android:visibility="gone"/>
+
+               <TextView
+                   android:id="@+id/tv_home_paimings_count"
+                   android:layout_width="wrap_content"
+                   android:layout_height="wrap_content"
+                   android:layout_alignLeft="@+id/tv_home_paimings"
+                   android:layout_alignParentBottom="true"
+                   android:text="@string/action_hours_connet"
+                   android:textColor="#FF3333"
+                   android:textSize="16sp" />
+            
+        </RelativeLayout>
+        
+    </LinearLayout>
+        
+    </RelativeLayout>
+    <!-- 用来存放内容的碎片 -->
+    <RelativeLayout 
+        android:id="@+id/rl_content_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:layout_marginTop="10dp"
+        >
+        
+    </RelativeLayout>
+    <!-- 上缴款项的按钮 -->
+    
+    <RelativeLayout 
+        android:id="@+id/btn_out"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="1.5"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/tv_out"
+            style="@style/next"
+            android:layout_width="288dp"
+            android:layout_height="39dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="上缴款项" />
+        
+    </RelativeLayout>
+    
+
+</LinearLayout>

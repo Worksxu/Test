@@ -1,0 +1,613 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 押金和折现界面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f8f8f8" 
+    android:id="@+id/ll_main">
+    
+    <ScrollView 
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9">
+        
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content" 
+            android:orientation="vertical">
+            
+             <RelativeLayout 
+        android:id="@+id/rl_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#fff">
+        
+        <TextView android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="钢瓶押金"
+            android:textSize="14sp"
+            android:textColor="#333"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+        
+        
+    </RelativeLayout>
+    
+    
+    
+    <View style="@style/line_style"/>
+    
+    <RelativeLayout 
+        android:id="@+id/rl_select"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#fff"
+        >
+        <TextView android:id="@+id/tv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="选择气罐规格"
+            android:textSize="14sp"
+            android:textColor="#333"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+        
+        <ImageView 
+            android:id="@+id/iv_type"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/huise_jiantou"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"/>
+        
+        
+    </RelativeLayout>
+    <View style="@style/line_style"/>
+    <LinearLayout
+        android:id="@+id/rl_all"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:visibility="gone"
+        android:orientation="vertical" 
+        android:layout_marginTop="10dp">
+        
+    <RelativeLayout 
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        >
+        
+        
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/rl_sum"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#fff"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp">
+        <TextView 
+            android:id="@+id/tv_sum"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="押金合计："
+            android:textSize="14sp"
+            android:textColor="#333"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="30dp"
+           />
+        
+         <TextView 
+            android:id="@+id/tv_sum_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="0"
+            android:textSize="14sp"
+            android:textColor="#333"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="40dp"
+            />
+        
+    </RelativeLayout>
+    <View style="@style/line_style"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="10dp"/>
+    
+        
+    </LinearLayout>
+    
+     <View style="@style/line_style"
+         android:layout_marginTop="10dp"/>
+     
+     
+     <RelativeLayout 
+         android:id="@+id/rl_zhexian"
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         android:background="#fff"
+         >
+    
+         <TextView android:id="@+id/tv_zhexian"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="旧瓶折现"
+            android:textSize="14sp"
+            android:textColor="#333"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+         
+         <ToggleButton
+            android:id="@+id/tb_user"
+            android:layout_width="39dp"
+            android:layout_height="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/seletor"
+            android:checked="false" 
+            android:textOn=""
+            android:textOff=""/>
+         
+     </RelativeLayout>
+     
+     <View style="@style/line_style"/>
+     <!-- 旧瓶折现的布局 -->
+     <LinearLayout 
+         android:id="@+id/rl_jiupin"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="@drawable/textview_type"
+         android:visibility="visible"
+         android:orientation="vertical"
+        android:layout_margin="10dp"
+         >
+         
+            <LinearLayout 
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:background="#ccc">
+            <TextView 
+        android:id="@+id/tv_typ_0"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textColor="#666"
+        android:textSize="14sp"
+        android:text="规格"
+        android:layout_weight="1"/>
+    <View android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:background="#ddd"/>
+    
+    <TextView 
+        android:id="@+id/tv_num"
+         android:layout_width="0dp"
+        android:layout_height="40dp"
+         android:layout_weight="1"
+          android:gravity="center"
+        android:textColor="#666"
+        android:textSize="14sp"
+        android:text="数量"
+         />
+    <View android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:background="#ddd"/>
+    
+     <TextView 
+        android:id="@+id/tv_money"
+         android:layout_width="0dp"
+        android:layout_height="40dp"
+         android:layout_weight="1"
+          android:gravity="center"
+        android:textColor="#666"
+        android:textSize="14sp"
+        android:text="价格"
+         />
+             
+         </LinearLayout>
+         <View style="@style/line_style"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"/>
+         
+         <LinearLayout 
+             android:layout_width="match_parent"
+             android:layout_height="wrap_content"
+             android:orientation="horizontal">
+              <ListView 
+             android:id="@+id/lv_content"
+             android:layout_width="0dp"
+             android:layout_weight="2"
+             android:layout_height="wrap_content"
+             android:background="#fff">
+             
+         </ListView>
+         <LinearLayout 
+             android:id="@+id/ll_content"
+             android:layout_width="0dp"
+             android:layout_height="wrap_content"
+             android:layout_weight="1"
+             android:orientation="vertical"
+             >
+     
+             <EditText 
+        android:id="@+id/et_money"
+         android:layout_width="match_parent"
+        android:layout_height="40dp"
+         />
+                <EditText 
+        android:id="@+id/et_money_1"
+         android:layout_width="match_parent"
+        android:layout_height="40dp"
+         />
+                
+                    <EditText 
+        android:id="@+id/et_money_2"
+         android:layout_width="match_parent"
+        android:layout_height="40dp"
+         />
+                    <EditText 
+        android:id="@+id/et_money_3"
+         android:layout_width="match_parent"
+        android:layout_height="40dp"
+         />
+             
+         </LinearLayout>
+         </LinearLayout>
+         <LinearLayout 
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:visibility="gone">
+            <TextView 
+        android:id="@+id/tv_typ"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textColor="#666"
+        android:textSize="14sp"
+        android:text="5kg"
+        android:layout_weight="1"/>
+    <View android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:background="#ddd"/>
+    
+    <RelativeLayout 
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="40dp">
+
+    <EditText
+        android:id="@+id/et_peijian_num_1"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/iv_peijian_sup"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/num"
+        android:gravity="center"
+        android:lines="1"
+        android:numeric="integer"
+        android:singleLine="true"
+        android:text="0" />
+
+    <ImageView
+        android:id="@+id/iv_peijian_add"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/et_peijian_num_1"
+        android:src="@drawable/add_1" />
+
+    <ImageView
+        android:id="@+id/iv_peijian_sup"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/et_peijian_num_1"
+        android:src="@drawable/sup" />
+        
+    </RelativeLayout>
+    <View android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:background="#ddd"/>
+    
+     <EditText 
+         android:layout_width="0dp"
+        android:layout_height="40dp"
+         android:layout_weight="1"/>
+             
+         </LinearLayout>
+         <View style="@style/line_style"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"/>
+         
+          <LinearLayout 
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:visibility="gone">
+            <TextView 
+        android:id="@+id/tv_type_1"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textColor="#666"
+        android:textSize="14sp"
+        android:text="15kg"
+        android:layout_weight="1"/>
+    <View android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:background="#ddd"/>
+    
+    <RelativeLayout 
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="40dp">
+
+    <EditText
+        android:id="@+id/et_ping_num"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/iv_ping_sup"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/num"
+        android:gravity="center"
+        android:lines="1"
+        android:numeric="integer"
+        android:singleLine="true"
+        android:text="0" />
+
+    <ImageView
+        android:id="@+id/iv_ping_add"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/et_ping_num"
+        android:src="@drawable/add_1" />
+
+    <ImageView
+        android:id="@+id/iv_ping_sup"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/et_ping_num"
+        android:src="@drawable/sup" />
+        
+    </RelativeLayout>
+    <View android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:background="#ddd"/>
+    
+     <EditText 
+         android:layout_width="0dp"
+        android:layout_height="40dp"
+         android:layout_weight="1"/>
+             
+         </LinearLayout>
+          <View style="@style/line_style"
+             android:layout_marginLeft="10dp"
+             android:layout_marginRight="10dp"/>
+          
+          
+           <LinearLayout 
+              android:orientation="horizontal"
+              android:layout_width="match_parent"
+              android:layout_height="40dp"
+              android:visibility="gone">
+            <TextView 
+        android:id="@+id/tv_typ_2"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textColor="#666"
+        android:textSize="14sp"
+        android:text="50kg"
+        android:layout_weight="1"/>
+    <View android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:background="#ddd"/>
+    
+    <RelativeLayout 
+        android:layout_width="0dp"
+        android:layout_weight="1"
+        android:layout_height="40dp">
+
+    <EditText
+        android:id="@+id/et_ping_num_1"
+        android:layout_width="40dp"
+        android:layout_height="30dp"
+        android:layout_alignTop="@+id/iv_ping_sup_1"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/num"
+        android:gravity="center"
+        android:lines="1"
+        android:numeric="integer"
+        android:singleLine="true"
+        android:text="0" />
+
+    <ImageView
+        android:id="@+id/iv_ping_add_1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_toRightOf="@+id/et_ping_num_1"
+        android:src="@drawable/add_1" />
+
+    <ImageView
+        android:id="@+id/iv_ping_sup_1"
+        android:layout_width="30dp"
+        android:layout_height="30dp"
+        android:layout_centerVertical="true"
+        android:layout_toLeftOf="@+id/et_ping_num_1"
+        android:src="@drawable/sup" />
+        
+    </RelativeLayout>
+    <View android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:background="#ddd"/>
+    
+     <EditText 
+         android:layout_width="0dp"
+        android:layout_height="40dp"
+         android:layout_weight="1"/>
+             
+         </LinearLayout>
+         
+       
+         
+         
+         
+     </LinearLayout>
+     
+     <View style="@style/line_style"/>
+     
+     <RelativeLayout 
+         android:id="@+id/rl_canye"
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         android:background="#fff"
+         >
+    
+         <TextView android:id="@+id/tv_canye"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="残液折现"
+            android:textSize="14sp"
+            android:textColor="#333"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+         
+         <ToggleButton
+            android:id="@+id/tb_canye"
+            android:layout_width="39dp"
+            android:layout_height="27dp"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/seletor"
+            android:checked="false" 
+            android:textOn=""
+            android:textOff=""/>
+         
+     </RelativeLayout>
+     <View style="@style/line_style"/>
+     
+      <LinearLayout 
+         android:id="@+id/rl_canye_content"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         android:background="#fff"
+         android:visibility="gone"
+         android:orientation="vertical">
+         
+                <RelativeLayout 
+        android:id="@+id/rl_canye_weight"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#fff">
+        
+        <TextView android:id="@+id/tv_canye_weight"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="残液重量"
+            android:textSize="14sp"
+            android:textColor="#333"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <EditText
+            android:id="@+id/et_new_input"
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tv_canye_weight"
+            android:background="@null"
+            android:ems="10"
+            android:hint="请输入残液重量" 
+            android:layout_marginLeft="5dp"/>
+
+        <TextView
+            android:id="@+id/tv_danwei"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBaseline="@+id/tv_canye_weight"
+            android:layout_alignBottom="@+id/tv_canye_weight"
+            android:layout_alignRight="@+id/et_new_input"
+            android:text="KG"
+            android:textColor="#333"
+            android:textSize="14sp" />
+        
+    </RelativeLayout>
+    
+                <View style="@style/line_style"/>
+                
+                <RelativeLayout 
+        android:id="@+id/rl_canye_money"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#fff">
+        
+        <TextView android:id="@+id/tv_canye_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="折现金额"
+            android:textSize="14sp"
+            android:textColor="#333"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <EditText
+            android:id="@+id/et_money_input"
+            android:layout_width="270dp"
+            android:layout_height="40dp"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tv_canye_money"
+            android:background="@null"
+            android:ems="10"
+            android:hint="请输入折现金额" 
+            android:layout_marginLeft="5dp"/>
+        
+        
+    </RelativeLayout>
+    
+         <View style="@style/line_style"/>        
+         
+     </LinearLayout>
+     
+            
+        </LinearLayout>
+        
+    </ScrollView>
+    
+   
+
+      
+     
+     <RelativeLayout 
+         android:layout_width="match_parent"
+         android:layout_height="0dp"
+         android:layout_weight="1.5"
+         android:layout_marginTop="10dp">
+
+         <TextView
+             android:id="@+id/tv_next"
+             style="@style/next"
+             android:layout_width="288dp"
+             android:layout_height="39dp"
+             android:layout_alignParentBottom="true"
+             android:layout_centerHorizontal="true"
+             android:layout_marginBottom="10dp"
+             android:text="下一步" />
+         
+     </RelativeLayout>
+     
+     
+     
+     
+
+</LinearLayout>

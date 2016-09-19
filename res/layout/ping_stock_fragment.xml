@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 钢瓶库存的碎片布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#f8f8f8">
+    
+    <LinearLayout 
+        android:id="@+id/ll_weight"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/textview_type">
+        
+        <TextView android:id="@+id/tv_weight"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="重瓶"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:textColor="#333"
+            android:gravity="center"
+            />
+        
+        <ListView 
+            android:id="@+id/lv_content"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            >
+            
+        </ListView>
+        
+    </LinearLayout>
+    
+    
+       <LinearLayout 
+        android:id="@+id/ll_null"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+         android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/textview_type">
+        
+        <TextView android:id="@+id/tv_null"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="空瓶"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:textColor="#333"
+            android:gravity="center"
+            />
+        
+        <ListView 
+            android:id="@+id/lv_content_null"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            >
+            
+        </ListView>
+        
+    </LinearLayout>
+    
+       
+        <LinearLayout 
+        android:id="@+id/ll_not"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp"
+        android:layout_height="wrap_content"
+        android:background="@drawable/textview_type">
+        
+        <TextView android:id="@+id/tv_not"
+            android:layout_width="0dp"
+            android:layout_weight="1"
+            android:layout_height="match_parent"
+            android:text="折旧瓶"
+            android:layout_gravity="center"
+            android:textSize="15sp"
+            android:textColor="#333"
+            android:gravity="center"
+            />
+        
+        <ListView 
+            android:id="@+id/lv_content_not"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="2"
+            >
+            
+        </ListView>
+        
+    </LinearLayout>
+    
+
+</LinearLayout>

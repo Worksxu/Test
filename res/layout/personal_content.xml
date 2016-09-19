@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    >
+    
+    <RelativeLayout 
+       android:id="@+id/rl_personal_message"
+       android:layout_width="match_parent"
+       android:layout_height="45dp"
+       android:background="#fff"
+      >
+
+    <TextView
+        android:id="@+id/tv_personal_left"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"
+        android:text="隶属"
+        android:textColor="@color/mormal"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_personal_right"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBaseline="@+id/tv_personalleft"
+        android:layout_alignBottom="@+id/tv_personal_left"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:text="朝阳区四惠"
+        android:textColor="@color/umormal"
+        android:textSize="15sp" />
+       
+   </RelativeLayout>
+
+     
+
+</RelativeLayout>

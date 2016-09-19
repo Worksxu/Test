@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#f8f8f8">
+    
+    <GridView 
+        android:id="@+id/gv_image"
+        android:layout_width="match_parent"
+        android:layout_margin="10dp"
+        android:verticalSpacing="10dp"
+        android:horizontalSpacing="10dp"
+        android:fadeScrollbars="true" 
+        android:numColumns="3"
+        android:layout_height="wrap_content"
+        android:scrollbars="none"
+       >
+        
+    </GridView>
+
+     <TextView
+         android:id="@+id/tv_next"
+         style="@style/next"
+         android:layout_width="288dp"
+         android:layout_height="39dp"
+         android:layout_alignParentBottom="true"
+         android:layout_centerHorizontal="true"
+         android:layout_marginBottom="10dp"
+         android:text="下一步" />
+     
+</RelativeLayout>

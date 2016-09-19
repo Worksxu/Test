@@ -1,0 +1,34 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent" 
+    android:background="#f8f8f8">
+
+    <Button
+        android:id="@+id/btn_sure"
+        android:layout_width="150dp"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_centerVertical="true"
+        android:onClick="selectType"
+        android:text="确定" />
+
+    <TextView
+        android:id="@+id/tv_result_show"
+        android:layout_width="wrap_content"
+        android:layout_height="40dp"
+        android:layout_above="@+id/btn_sure"
+        android:layout_centerHorizontal="true"
+        android:layout_marginBottom="39dp"
+        android:text="显示nfc扫码结果" />
+
+    <TextView
+        android:id="@+id/textView1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="36dp"
+        android:text="可以连续扫描" />
+
+</RelativeLayout>

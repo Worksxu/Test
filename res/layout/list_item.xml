@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="40dp"
+    android:orientation="horizontal" 
+    android:background="@drawable/textview_type">
+    
+    <TextView 
+        android:id="@+id/tv_type"
+        android:layout_width="0dp"
+        android:layout_height="40dp"
+        android:gravity="center"
+        android:textColor="#666"
+        android:textSize="14sp"
+        android:text="5kg"
+        android:layout_weight="1"/>
+    <View android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:background="#ddd"/>
+    
+    <EditText 
+        android:id="@+id/et_num"
+         android:layout_width="0dp"
+        android:layout_height="40dp"
+         android:layout_weight="1"/>
+    <View android:layout_width="1dp"
+        android:layout_height="40dp"
+        android:background="#ddd"/>
+    
+     <EditText 
+        android:id="@+id/et_money"
+         android:layout_width="0dp"
+        android:layout_height="40dp"
+         android:layout_weight="1"/>
+    
+    
+    
+
+</LinearLayout>

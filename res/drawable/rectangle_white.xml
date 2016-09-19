@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<shape xmlns:android="http://schemas.android.com/apk/res/android" >
+
+    <!-- 渐变 -->
+    <gradient
+        android:angle="0"
+        android:centerColor="@android:color/black"
+        android:centerX="0"
+        android:centerY="0"
+        android:endColor="@android:color/black"
+        android:gradientRadius="90"
+        android:startColor="@android:color/white"
+        android:type="linear"
+        android:useLevel="true" />
+    
+    <size 
+        android:height="40dp"
+        />
+
+    <!-- 填充 -->
+    <solid android:color="@android:color/white" />
+    <!-- 填充的颜色 -->
+    <stroke
+        android:dashGap="0dp"
+        android:dashWidth="0dp"
+        android:width="0.5dp"
+        android:color="#00ffffff" />
+
+</shape>

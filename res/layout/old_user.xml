@@ -1,0 +1,61 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 老用户布局 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" >
+     <RelativeLayout 
+         android:id="@+id/rl_olduser"
+         android:layout_width="match_parent"
+         android:layout_height="40dp"
+         >
+         
+         <TextView 
+             android:id="@+id/tv_olduser"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:text="客户电话"
+             android:textSize="14sp"
+             android:textColor="#333"
+             android:layout_marginLeft="10dp"
+             android:layout_centerVertical="true"/>
+
+         <EditText
+             android:id="@+id/et_input"
+             android:layout_width="270dp"
+             android:layout_height="40dp"
+             android:layout_centerVertical="true"
+             android:layout_marginLeft="10dp"
+             android:layout_toRightOf="@+id/tv_olduser"
+             android:background="@null"
+             android:ems="10"
+             android:numeric="integer" />
+
+         <ImageView
+             android:id="@+id/select"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_alignRight="@+id/et_input"
+             android:layout_centerVertical="true"
+             android:paddingLeft="10dp"
+             android:paddingRight="10dp"
+             android:src="@drawable/shousuo"
+             android:layout_marginRight="10dp"/>
+         
+     </RelativeLayout>
+     
+     <View style="@style/line_style"/>
+     
+     <!-- 老用户选中之后的布局(动态加载) -->
+     <RelativeLayout 
+          android:id="@+id/rl_old_content"
+         android:layout_width="match_parent"
+         android:layout_height="wrap_content"
+         >
+         
+     </RelativeLayout>
+     
+     
+    
+
+</LinearLayout>

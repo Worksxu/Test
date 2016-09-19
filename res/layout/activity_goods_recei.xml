@@ -1,0 +1,109 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/LinearLayout1"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#f8f8f8">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp" 
+        android:background="@drawable/bg_holder">
+         <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/rl_back"
+         >
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bt_image_back" />
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ivBack"
+            android:layout_toRightOf="@+id/ivBack"
+            android:layout_marginLeft="0dp"
+            android:text="返回" 
+            android:textColor="#fff"
+            android:textSize="14sp"/>
+
+     </RelativeLayout>
+        <RadioGroup 
+        android:id="@+id/rg_select"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:orientation="horizontal"
+        android:gravity="center"
+       >
+
+        <RadioButton
+            android:id="@+id/rb_weight"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:background="@drawable/radiobutton"
+             style="@style/RadioTopStyle"
+            android:text="重瓶领取" 
+            android:gravity="center"
+            android:checked="true"
+          />
+
+        <RadioButton 
+            android:id="@+id/rb_peijian"
+            android:layout_width="80dp"
+            android:layout_height="40dp"
+            android:text="配件领取"
+            android:background="@drawable/radiobutton_right"
+             style="@style/RadioTopStyle"
+              android:gravity="center"
+              />
+        
+        
+    </RadioGroup>
+    </RelativeLayout>
+    <!-- 放Fragment -->
+    <RelativeLayout 
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:layout_marginTop="10dp">
+        
+    </RelativeLayout>
+    
+    
+    <RelativeLayout 
+       android:id="@+id/rl_button"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1.5"
+       android:layout_marginTop="10dp">
+
+       <TextView
+           android:id="@+id/apply"
+           android:layout_width="288dp"
+           android:layout_height="39dp"
+           android:layout_alignParentBottom="true"
+           android:layout_centerHorizontal="true"
+           android:layout_marginBottom="10dp"
+           android:background="@drawable/commit"
+           android:gravity="center"
+           android:text="申请配件"
+           android:textColor="#fff" />
+       
+   </RelativeLayout>
+    
+    
+
+  
+
+</LinearLayout>

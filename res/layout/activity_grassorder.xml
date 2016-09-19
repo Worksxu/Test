@@ -1,0 +1,109 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#f8f8f8">
+    
+    <RelativeLayout 
+        android:id="@+id/rl_grass_order"
+        android:layout_width="match_parent"
+        android:layout_height="50dp"
+        android:background="@color/white">
+        
+        
+        <ImageView 
+            android:id="@+id/iv_all_order"
+            android:layout_width="30dp"
+            android:layout_height="30dp"
+            android:scaleType="fitXY"
+            android:background="@drawable/myordernew"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="10dp"/>
+
+        <TextView
+            android:id="@+id/tv_all_order"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_toRightOf="@+id/iv_all_order"
+            android:text="@string/all_order"
+            android:textColor="#333"
+            android:textSize="14sp" />
+
+        <RelativeLayout
+            android:id="@+id/rl_look_orders"
+            android:layout_width="wrap_content"
+            android:layout_height="50dp"
+            android:layout_alignParentRight="true"
+            android:layout_alignParentTop="true" 
+            android:layout_marginRight="10dp">
+
+            <TextView 
+                android:id="@+id/tv_look_orders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/look_all_order"
+                android:textSize="14sp"
+                android:textColor="#666"
+               android:layout_centerVertical="true" />
+            
+            <ImageView 
+                android:id="@+id/iv_look_orders"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/huise_jiantou"
+                android:layout_toRightOf="@+id/tv_look_orders"
+                android:layout_centerVertical="true"
+                android:layout_marginLeft="5dp"/>
+        </RelativeLayout>
+        
+    </RelativeLayout>
+    
+    <View style="@style/line_style"/>
+    
+    <RadioGroup 
+        android:id="@+id/rg_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+       >
+
+        <RadioButton
+            android:id="@+id/rb_unfinsh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radiobutton"
+             style="@style/RadioTopStyle"
+            android:text="@string/unfinsh" 
+            android:gravity="center"
+            android:checked="true"
+          />
+
+        <RadioButton 
+            android:id="@+id/rb_finsh"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/finsh"
+            android:background="@drawable/radiobutton_right"
+             style="@style/RadioTopStyle"
+              android:gravity="center"
+              />
+        
+        
+    </RadioGroup>
+    <!-- 用来存放fragment -->
+    <LinearLayout
+        android:id="@+id/ll_fragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical"
+        android:layout_marginTop="20dp">
+        
+    </LinearLayout>
+    
+    
+
+</LinearLayout>

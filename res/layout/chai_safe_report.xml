@@ -1,0 +1,169 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8"
+    android:orientation="vertical" >
+
+    <include layout="@layout/action_bar" />
+
+    <include layout="@layout/search_customer" />
+    
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <View style="@style/line_style" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#fff" 
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:text="客户姓名"
+                android:textColor="#333" />
+            <TextView
+                android:id="@+id/tv_anjian_name"
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:textColor="#666" />
+        </LinearLayout>
+
+        <View style="@style/line_style" />
+    </LinearLayout>
+    
+    
+     <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <View style="@style/line_style" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#fff" 
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:text="客户类型"
+                android:textColor="#333" />
+            <TextView
+                android:id="@+id/tv_anjian_type"
+                android:paddingLeft="10dp"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#666" />
+        </LinearLayout>
+
+        <View style="@style/line_style" />
+    </LinearLayout>
+    
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <View style="@style/line_style" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#fff" 
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:text="安检记录"
+                android:textColor="#333" />
+            <TextView
+                android:id="@+id/tv_anjian"
+                android:paddingLeft="10dp"
+                android:gravity="center_vertical"
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:textColor="#666" />
+        </LinearLayout>
+
+        <View style="@style/line_style" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:orientation="vertical" >
+
+        <View style="@style/line_style" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="40dp"
+            android:background="#fff" 
+            android:orientation="horizontal"
+            >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_marginLeft="10dp"
+                android:layout_marginStart="10dp"
+                android:gravity="center_vertical"
+                android:text="上次安检时间"
+                android:textColor="#333" />
+            <TextView
+                android:id="@+id/tv_anjian_time"
+                android:paddingLeft="10dp"
+                android:layout_width="match_parent"
+                android:gravity="center_vertical"
+                android:layout_height="match_parent"
+                android:textColor="#666" />
+        </LinearLayout>
+
+        <View style="@style/line_style" />
+    </LinearLayout>
+    
+      <RelativeLayout 
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="1.5"
+       android:layout_marginTop="10dp">
+
+       <TextView
+            android:id="@+id/tv_button_start"
+           android:layout_width="288dp"
+           android:layout_height="39dp"
+           android:layout_alignParentBottom="true"
+           android:layout_centerHorizontal="true"
+           android:layout_marginBottom="10dp"
+           android:background="@drawable/commit"
+           android:gravity="center"
+           android:text="开始安检"
+           android:textColor="#fff" />
+       
+   </RelativeLayout>
+
+</LinearLayout>

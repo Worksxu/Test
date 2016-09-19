@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 客户的欠款详情界面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#f8f8f8">
+    
+    <RelativeLayout 
+        android:id="@+id/rl_name"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#fff">
+        
+        <TextView 
+            android:id="@+id/tv_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="姓名"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:textSize="15sp"
+            android:textColor="#333"/>
+        
+        <TextView 
+            android:id="@+id/tv_name_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="李四毛"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textSize="15sp"
+            android:textColor="#333"/>
+        
+    </RelativeLayout>
+    
+    <View style="@style/line_style"/>
+    
+    <RelativeLayout 
+        android:id="@+id/rl_money"
+        android:layout_width="match_parent"
+        android:layout_height="40dp"
+        android:background="#fff">
+        
+        <TextView 
+            android:id="@+id/tv_money"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="欠款金额"
+            android:layout_marginLeft="10dp"
+            android:layout_centerVertical="true"
+            android:textSize="15sp"
+            android:textColor="#333"/>
+        
+        <TextView 
+            android:id="@+id/tv_money_content"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="1220"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:layout_alignParentRight="true"
+            android:textSize="15sp"
+            android:textColor="#ff3333"/>
+        
+    </RelativeLayout>
+    
+    <View style="@style/line_style"/>
+    
+    <RadioGroup 
+        android:id="@+id/rg_select"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:orientation="horizontal"
+        android:gravity="center_horizontal"
+       >
+
+        <RadioButton
+            android:id="@+id/rb_qiankuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/radiobutton"
+             style="@style/RadioTopStyle"
+            android:text="缴款记录" 
+            android:gravity="center"
+            android:checked="true"
+          />
+
+        <RadioButton 
+            android:id="@+id/rb_jiaokuan"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="欠款记录"
+            android:background="@drawable/radiobutton_right"
+             style="@style/RadioTopStyle"
+              android:gravity="center"
+              />
+        
+        
+    </RadioGroup>
+    
+    <RelativeLayout 
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"
+        android:layout_marginTop="10dp">
+        
+        
+        
+    </RelativeLayout>
+    
+    <RelativeLayout 
+        android:id="@+id/rl_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="2"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/next"
+            android:layout_width="288dp"
+            android:layout_height="39dp"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:background="@drawable/commit"
+            android:gravity="center"
+            android:text="收缴欠款"
+            android:textColor="#fff" />
+        
+    </RelativeLayout>
+    
+
+</LinearLayout>

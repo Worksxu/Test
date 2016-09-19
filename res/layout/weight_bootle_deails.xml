@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+   >
+    
+    <LinearLayout 
+        android:layout_height="match_parent"
+        android:layout_width="match_parent"
+         android:orientation="vertical" 
+    android:background="#f8f8f8"
+        >
+    <!-- 用来存放表格类碎片 -->
+    <RelativeLayout 
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        >
+        
+        <LinearLayout 
+            android:id="@+id/ll_titles"
+            android:layout_width="match_parent"
+            android:layout_height="50dp"
+            android:orientation="horizontal"
+            android:layout_marginLeft="10dp"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/textview_type"
+            android:layout_centerVertical="true">
+            
+            <TextView 
+                android:id="@+id/type"
+                android:layout_height="50dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="规格"
+                android:textSize="14sp"
+                android:textColor="#333"
+                android:background="#ddd"
+                android:gravity="center"/>
+            <View android:layout_width="0.5dp"
+                android:layout_height="50dp"/>
+            <TextView 
+                android:id="@+id/num"
+                android:layout_height="50dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="数量"
+                android:textSize="14sp"
+                android:textColor="#333"
+                android:background="#ddd"
+                android:gravity="center"/>
+            <View android:layout_width="0.5dp"
+                android:layout_height="50dp"/>
+            <TextView 
+                android:id="@+id/sum"
+                android:layout_height="50dp"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:text="合计"
+                android:textSize="14sp"
+                android:textColor="#333"
+                android:background="#ddd"
+                android:gravity="center"/>
+        </LinearLayout>
+			
+        
+    </RelativeLayout>
+    
+    
+    <!-- 用来存放表格类fragment -->
+    
+    <include layout="@layout/content_item"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginLeft="10dp"
+        android:layout_marginBottom="60dp"
+        android:layout_marginRight="10dp"/>
+    
+    </LinearLayout>
+     <RelativeLayout 
+        android:id="@+id/rl_button"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        >
+        <TextView
+           android:id="@+id/next"
+           android:layout_width="288dp"
+           android:layout_height="39dp"
+           android:layout_centerHorizontal="true"
+           android:background="@drawable/commit"
+           android:gravity="center"
+           android:text="确定领取"
+           android:textColor="#fff" 
+           android:layout_alignParentBottom="true"
+           android:layout_marginBottom="10dp"/>
+         </RelativeLayout>
+
+</RelativeLayout>

@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#f8f8f8">
+    
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp" 
+        android:background="@drawable/bg_holder">
+         <RelativeLayout
+        android:layout_width="wrap_content"
+        android:layout_height="50dp"
+        android:id="@+id/rl_back"
+         >
+
+        <ImageView
+            android:id="@+id/ivBack"
+            android:layout_width="21dp"
+            android:layout_height="21dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="16dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/bt_image_back" />
+
+        <TextView
+            android:id="@+id/tv_back"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignBottom="@+id/ivBack"
+            android:layout_toRightOf="@+id/ivBack"
+            android:layout_marginLeft="0dp"
+            android:text="返回" 
+            android:textColor="#fff"
+            android:textSize="14sp"/>
+
+     </RelativeLayout>
+        <TextView
+            android:id="@+id/tvTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_centerVertical="true"
+            android:text="申请配件"
+            android:textColor="#ffffff"
+            android:textSize="21sp" />
+        
+           <TextView
+            android:id="@+id/tvClear"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            
+            android:text="清空"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="10dp"
+            android:layout_centerVertical="true"
+            android:textColor="#ffffff"
+            android:textSize="14sp" />
+    </RelativeLayout
+        >
+    
+    <RelativeLayout 
+        android:id="@+id/rl_content"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        
+        android:layout_marginTop="10dp">
+        
+    </RelativeLayout>
+    
+
+</LinearLayout>

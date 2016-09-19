@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+     xmlns:imagecontrol="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/rl_holder"
+    android:background="@drawable/bg_jianbian"
+     >
+     
+   
+    
+    
+    <com.ruiqi.view.RoundImageView
+        android:id="@+id/riv_head"
+        android:src="@drawable/head"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:scaleType="fitXY"
+         imagecontrol:border_outside_color="@color/white"
+            imagecontrol:border_thickness="4dp"
+            imagecontrol:border_inside_color="#40ffffff"
+        />
+
+    <TextView
+        android:id="@+id/tv_home_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/riv_head"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/riv_head"
+        android:text="送气工"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_home_mobile"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_home_name"
+        android:layout_centerVertical="true"
+        android:text="13910012100"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <TextView
+        android:id="@+id/tv_home_address"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/riv_head"
+        android:layout_alignLeft="@+id/tv_home_mobile"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_account_magger"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:padding="10dp"
+        android:layout_centerVertical="true"
+        android:layout_marginRight="10dp" >
+
+        <TextView
+            android:id="@+id/tv_account_magger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/action_account"
+            android:textColor="@color/white"
+            android:textSize="10sp" />
+
+        <ImageView
+            android:id="@+id/iv_account_magger"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scaleType="fitXY"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/tv_account_magger"
+            android:src="@drawable/account_magger"
+            android:layout_marginLeft="5dp" />
+
+    </RelativeLayout>
+
+    <RatingBar
+        android:id="@+id/rb_main_star"
+        android:visibility="gone"
+        style="@style/MyRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_home_name"
+        android:layout_toRightOf="@+id/tv_home_name"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1.0" 
+        android:layout_marginLeft="5dp"/>
+
+</RelativeLayout>
+    
+
+

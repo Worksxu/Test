@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="white">#fff</color>
+    <color name="black">#000</color>
+    <color name="huise">#ccc</color>
+    <color name="bg">#1B4160</color>
+     <color name="home_connet">#999999</color>
+     <color name="home_connet_hours">#1E72B7</color>
+      <color name="mormal">#333</color>
+      <color name="umormal">#666</color>
+       <color name="textcolorgray">#666</color>
+      
+    
+</resources>

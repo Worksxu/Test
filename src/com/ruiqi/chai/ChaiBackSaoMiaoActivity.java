@@ -1,0 +1,243 @@
+package com.ruiqi.chai;
+
+
+import java.io.Serializable;
+import java.util.ArrayList;
+import java.util.List;
+
+import android.app.Activity;
+import android.app.ProgressDialog;
+import android.content.Intent;
+import android.os.Bundle;
+import android.util.Log;
+import android.view.View;
+import android.view.View.OnClickListener;
+import android.widget.AdapterView;
+import android.widget.AdapterView.OnItemLongClickListener;
+import android.widget.CompoundButton;
+import android.widget.CompoundButton.OnCheckedChangeListener;
+import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.RelativeLayout;
+import android.widget.TextView;
+import android.widget.ToggleButton;
+
+import com.ruiqi.adapter.CommonAdapter;
+import com.ruiqi.adapter.ViewHolder;
+import com.ruiqi.bean.Weight;
+import com.ruiqi.utils.CurrencyUtils;
+import com.ruiqi.utils.InPutIsBottle;
+import com.ruiqi.utils.SPUtils;
+import com.ruiqi.utils.T;
+import com.ruiqi.works.MainActivity;
+import com.ruiqi.works.NfcActivity;
+import com.ruiqi.works.R;
+
+/**
+ * 退瓶中扫描空瓶的界面
+ * @author Administrator
+ *
+ */
+public class ChaiBackSaoMiaoActivity extends Activity implements OnCheckedChangeListener,OnItemLongClickListener,OnClickListener{
+	
+	private RelativeLayout rl_input_canye,rl_back;//需要设置显示和隐藏
+	
+	private TextView tv_next,tvTitle;
+	
+	private ToggleButton tb;
+	
+	private EditText et_input_zhexian,et_input_total;
+	
+	private String money,canye_weight;//余气的钱， 重量
+	
+	private List<String> mList;
+	private List<Weight> list;
+	
+	private ListView lv_content;
+	private CommonAdapter<Weight> adapter;
+	
+	private EditText et_input;
+	private TextView tv_input;
+	private ProgressDialog pd;
+
+	
+	@Override
+	protected void onCreate(Bundle savedInstanceState) {
+		super.onCreate(savedInstanceState);
+		setContentView(R.layout.chai_back_saomiao);
+	}
+	
+	@Override
+	protected void onNewIntent(Intent intent) {
+		super.onNewIntent(intent);
+		setIntent(intent);
+	}
+
+	private void initData() {
+		list = new ArrayList<Weight>();
+		mList = (List<String>) getIntent().getSerializableExtra("mData");
+		if(NfcActivity.mDataBottle!=null){
+			for(int i =0;i<NfcActivity.mDataBottle.size();i++){
+				list.add(new Weight(NfcActivity.mDataBottle.get(i).getXinpian(), NfcActivity.mDataBottle.get(i).getType(), NfcActivity.mDataBottle.get(i).getStatus()));
+			}
+		}
+		
+	}
+
+	private void init() {
+		rl_input_canye = (RelativeLayout) findViewById(R.id.rl_input_canye);
+		rl_back = (RelativeLayout) findViewById(R.id.rl_back);
+		
+		rl_input_canye.setVisibility(View.GONE);
+		
+		tvTitle = (TextView) findViewById(R.id.tvTitle);
+		tvTitle.setText("退瓶扫描");
+		tv_next = (TextView) findViewById(R.id.tv_next);
+		tv_next.setOnClickListener(this);
+		
+		tb= (ToggleButton) findViewById(R.id.iv_toff);
+		tb.setOnCheckedChangeListener(this);
+		
+		
+		rl_back.setOnClickListener(this);
+		
+		
+		et_input_zhexian = (EditText) findViewById(R.id.et_input_zhexian);
+		et_input_total = (EditText) findViewById(R.id.et_input_total);
+		
+		lv_content = (ListView) findViewById(R.id.lv_content);
+		
+		et_input = (EditText) findViewById(R.id.et_input);
+		tv_input = (TextView) findViewById(R.id.tv_input);
+		tv_input.setOnClickListener(this);
+		
+		pd = new ProgressDialog(this);
+		pd.setMessage("正在加载......");
+		
+	}
+	
+	@Override
+	protected void onResume() {
+		super.onResume();
+		SPUtils.put(ChaiBackSaoMiaoActivity.this, "UI", "ChaiBackSaoMiaoActivity");
+		init();
+		initData();
+		if(list!=null){
+			adapter = new CommonAdapter<Weight>(ChaiBackSaoMiaoActivity.this,list,R.layout.ping_list_item) {
+				@Override
+				public void convert(ViewHolder helper, Weight item,int position) {
+					helper.setText(R.id.tv_xinpian, item.getXinpian());
+//					if(position==0){
+//						helper.setText(R.id.tv_xuliehao, "序列号");
+//					}else{
+//						helper.setText(R.id.tv_xuliehao, position+"");
+//					}
+					helper.setText(R.id.tv_type, "1");
+					//helper.setText(R.id.tv_status, item.getStatus());
+					helper.setText(R.id.tv_status, "1");
+				}
+			};
+			lv_content.setAdapter(adapter);
+			lv_content.setOnItemLongClickListener(this);
+		}
+	}
+	
+	//将扫描的瓶和用户需要退的瓶作比较,数目相等才能跳转到下一步
+	//根据残液判断页面的跳转
+	private boolean setCanYeJump(){
+		if(Double.parseDouble(canye_weight)>0){
+			if(Double.parseDouble(money)==0){
+				T.showShort(ChaiBackSaoMiaoActivity.this, "请输入残液金额");
+				return false;
+			}
+		}
+		if(Double.parseDouble(money)>0){
+			if(Double.parseDouble(canye_weight)==0){
+				T.showShort(ChaiBackSaoMiaoActivity.this, "请输入残液重量");
+				return false;
+			}
+		}
+		return true;
+	}
+	
+	@Override
+	public void onClick(View v) {
+		Intent intent = null;
+		switch (v.getId()) {
+		case R.id.rl_back:
+			if(NfcActivity.mData!=null){
+				NfcActivity.mData=null;
+			}
+			if(NfcActivity.mDataBottle!=null){
+				NfcActivity.mDataBottle=null;
+			}
+			SPUtils.remove(ChaiBackSaoMiaoActivity.this, "UI");
+			
+			Intent it=new Intent(this,MainActivity.class);
+			it.setFlags(Intent.FLAG_ACTIVITY_CLEAR_TOP);
+			startActivity(it);
+			finish();
+		
+		case R.id.tv_next:
+			//如果没有扫描瓶，也没有输入瓶
+			if(NfcActivity.mDataBottle==null){					
+				T.showShort(ChaiBackSaoMiaoActivity.this, "没有扫描任何瓶");
+			}else{
+				if(NfcActivity.mDataBottle.size()==0){
+					T.showShort(ChaiBackSaoMiaoActivity.this, "没有扫描任何瓶");
+				}else{
+						money = et_input_zhexian.getText().toString().trim();
+						canye_weight = et_input_total.getText().toString().trim();
+						if(money==null||money.equals("")){
+							money="0";
+						}
+						if(canye_weight==null||canye_weight.equals("")){
+							canye_weight="0";
+						}
+						if(setCanYeJump()){
+							SPUtils.remove(ChaiBackSaoMiaoActivity.this, "UI");
+							if(NfcActivity.mData!=null){
+								NfcActivity.mData=null;
+							}
+							Log.e("lll", "扫瓶跳转路径");
+							
+							intent = new Intent(ChaiBackSaoMiaoActivity.this,ChaiBackSureActivity.class);
+							intent.putExtra("mData", (Serializable)list);
+							intent.putExtra("money", money);
+							intent.putExtra("canye_weight", canye_weight);
+							startActivity(intent);
+						}
+				}
+			}
+			break;
+		case R.id.tv_input://手动输入
+			if(NfcActivity.mDataBottle==null){
+				NfcActivity.mDataBottle = new ArrayList<Weight>();
+			}
+			String str = et_input.getText().toString();
+			new InPutIsBottle(str, ChaiBackSaoMiaoActivity.this, list, adapter, pd, 
+					NfcActivity.mDataBottle).addDataToList();
+			break;
+
+		default:
+			break;
+		}
+	}
+
+	@Override
+	public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
+		if(isChecked){
+			rl_input_canye.setVisibility(View.VISIBLE);
+		}else{
+			rl_input_canye.setVisibility(View.GONE);
+		}
+	}
+
+	@Override
+	public boolean onItemLongClick(AdapterView<?> parent, View view,
+			int position, long id) {
+		CurrencyUtils.onLongClickDelete(position, ChaiBackSaoMiaoActivity.this, adapter, list, NfcActivity.mDataBottle,NfcActivity.mData);
+		return false;
+	}
+
+}

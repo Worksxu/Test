@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 退瓶确定界面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical" 
+    android:background="#f8f8f8">
+    
+    <include layout="@layout/back_father1"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9"/>
+    
+    <RelativeLayout
+      android:id="@+id/rl_bts"
+      android:layout_width="match_parent"
+      android:layout_height="0dp"
+      android:layout_weight="2.5"
+       >
+       
+        <RadioGroup
+           android:id="@+id/rg_type"
+           android:layout_width="match_parent"
+           android:layout_height="29dp"
+           android:orientation="horizontal" 
+           android:gravity="center_horizontal"
+           android:layout_marginTop="10dp">
+
+           <RadioButton
+               android:id="@+id/rb_xianjin"
+               android:layout_width="100dp"
+               android:layout_height="29dp"
+               android:text="现金支付" 
+               android:checked="true"
+               android:textColor="#333"/>
+
+           <RadioButton
+               android:id="@+id/rb_intent"
+               android:layout_width="100dp"
+               android:layout_height="29dp"
+               android:text="网上支付"
+               android:layout_marginLeft="20dp"
+               android:textColor="#333" />
+
+       </RadioGroup>
+
+      <LinearLayout
+          android:layout_width="match_parent"
+          android:layout_height="60dp"
+          android:layout_alignParentBottom="true"
+          android:layout_alignParentLeft="true"
+          android:background="#3c3c3c" 
+          android:orientation="horizontal">
+          
+          <RelativeLayout 
+              android:id="@+id/rl_pay"
+              android:layout_width="0dp"
+              android:layout_height="60dp"
+              android:layout_weight="160"
+              >
+              <TextView 
+                  android:id="@+id/tv_pay_title"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:text="应付款:"
+                  android:textSize="13sp"
+                  android:layout_centerVertical="true"
+                  android:layout_marginLeft="10dp"
+                  android:textColor="#CCCCCC"/>
+
+              <TextView
+                  android:id="@+id/tv_pay"
+                  android:layout_width="wrap_content"
+                  android:layout_height="wrap_content"
+                  android:layout_centerVertical="true"
+                  android:layout_toRightOf="@+id/tv_pay_title"
+                  android:text="0"
+                  android:textColor="#FF5555"
+                  android:textSize="17sp"
+                  android:layout_marginLeft="5dp" />
+              
+          </RelativeLayout>
+
+          <TextView
+              android:id="@+id/tv_back_modify"
+              android:layout_width="0dp"
+              android:layout_height="60dp"
+              android:layout_weight="100"
+              android:text="返回修改"
+              android:textColor="#ffffff"
+              android:textSize="17sp" 
+              android:gravity="center"
+              android:background="#0080ff"/>
+
+          <TextView
+              android:id="@+id/tv_order_commit"
+              android:layout_width="0dp"
+              android:layout_weight="100"
+              android:layout_height="60dp"
+              android:gravity="center"
+              android:text="提交订单"
+              android:textColor="#ffffff"
+              android:textSize="17sp"
+              android:background="#d87909" />
+         
+      </LinearLayout>
+      
+  </RelativeLayout>
+    
+
+</LinearLayout>

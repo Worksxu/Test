@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 退瓶确定界面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8"
+    android:orientation="vertical" >
+
+    <include layout="@layout/action_bar" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content" >
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="订单号" />
+
+                    <TextView
+                        android:id="@+id/tv_ordersn"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right" />
+                </LinearLayout>
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/llv"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="vertical" >
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#ddd" />
+                <!-- 用来存放订单内容表格碎片 -->
+
+                <RelativeLayout
+                    android:id="@+id/rl_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginBottom="10dp"
+                    android:layout_marginTop="10dp"
+                    android:background="#ffffff" >
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ddd" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff"
+                android:orientation="vertical" >
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="余气重量" />
+
+                    <TextView
+                        android:id="@+id/tv_yuqi_weight"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#ddd" />
+
+                <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="余气钱" />
+
+                    <TextView
+                        android:id="@+id/tv_yuqi_money"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#ddd" />
+                
+                <LinearLayout
+                    android:id="@+id/ll_shuru_yajin"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="请输入退押金金额" />
+
+                    <TextView
+                        android:id="@+id/tv_shuru_yajin_money"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right" />
+                </LinearLayout>
+
+                <View
+                    android:layout_width="match_parent"
+                    android:layout_height="0.5dp"
+                    android:background="#ddd" />
+
+                <RelativeLayout
+                    android:visibility="gone"
+                    android:id="@+id/rl_olduser"
+                    android:layout_width="match_parent"
+                    android:layout_height="40dp"
+                    android:background="#fff" >
+
+                    <TextView
+                        android:id="@+id/tv_olduser"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="搜索押金条："
+                        android:textColor="#333"
+                        android:textSize="14sp" />
+
+                    <TextView
+                        android:id="@+id/et_input"
+                        android:layout_width="270dp"
+                        android:layout_height="40dp"
+                        android:layout_marginLeft="10dp"
+                        android:gravity="center_vertical"
+                        android:text="请输入押金条"
+                        android:layout_toRightOf="@+id/tv_olduser"
+                        />
+
+                    <ImageView
+                        android:id="@+id/select"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_alignRight="@+id/et_input"
+                        android:layout_centerVertical="true"
+                        android:layout_marginRight="10dp"
+                        android:paddingLeft="30dp"
+                        android:paddingRight="10dp"
+                        android:src="@drawable/shousuo" />
+                </RelativeLayout>
+            </LinearLayout>
+
+            <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                 android:visibility="gone"
+                android:background="#ddd" />
+            <LinearLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="horizontal"
+                    android:background="#fff"
+                     android:visibility="gone"
+                    android:padding="10dp" >
+
+                    <TextView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:text="钢瓶押金" />
+
+                    <TextView
+                        android:id="@+id/tv_yajin"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_weight="1"
+                        android:gravity="right" />
+                </LinearLayout>
+                <View
+                android:layout_width="match_parent"
+                android:layout_height="0.5dp"
+                android:background="#ddd" />
+        </LinearLayout>
+
+        <RelativeLayout
+            android:id="@+id/rl_bts"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_alignParentBottom="true" >
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="60dp"
+                android:layout_alignParentBottom="true"
+                android:layout_alignParentLeft="true"
+                android:background="#3c3c3c"
+                android:orientation="horizontal" >
+
+                <RelativeLayout
+                    android:id="@+id/rl_pay"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="160" >
+
+                    <TextView
+                        android:id="@+id/tv_pay_title"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="10dp"
+                        android:text="应付款:"
+                        android:textColor="#CCCCCC"
+                        android:textSize="13sp" />
+
+                    <TextView
+                        android:id="@+id/tv_pay"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_centerVertical="true"
+                        android:layout_marginLeft="5dp"
+                        android:layout_toRightOf="@+id/tv_pay_title"
+                        android:text="0"
+                        android:textColor="#FF5555"
+                        android:textSize="17sp" />
+                </RelativeLayout>
+
+                <TextView
+                    android:id="@+id/tv_order_commit"
+                    android:layout_width="0dp"
+                    android:layout_height="60dp"
+                    android:layout_weight="100"
+                    android:background="#d87909"
+                    android:gravity="center"
+                    android:text="提交订单"
+                    android:textColor="#ffffff"
+                    android:textSize="17sp" />
+            </LinearLayout>
+        </RelativeLayout>
+    </RelativeLayout>
+
+</LinearLayout>

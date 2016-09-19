@@ -1,0 +1,220 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    android:background="#f8f8f8"
+    xmlns:imagecontrol="http://schemas.android.com/apk/res-auto" >
+    
+   <RelativeLayout 
+       android:id="@+id/rl_personal_holder"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="201"
+       android:background="@drawable/bg_jianbian">
+       
+       <ImageView 
+           android:id="@+id/iv_personal_back"
+           android:layout_width="21dp"
+           android:layout_height="21dp"
+           android:src="@drawable/bt_image_back"
+           android:scaleType="fitXY"
+           android:layout_marginTop="14dp"
+           android:layout_marginLeft="10dp"/>
+
+       <TextView
+           android:id="@+id/account_back"
+           android:layout_width="wrap_content"
+           android:layout_height="wrap_content"
+           android:layout_alignParentRight="true"
+           android:text="@string/account_back"
+           android:textColor="@color/white"
+           android:textSize="13sp"
+           android:layout_marginTop="18dp" 
+           android:layout_marginRight="10dp"/>
+       
+        
+    <com.ruiqi.view.RoundImageView
+        android:id="@+id/riv_personal_head"
+        android:src="@drawable/head"
+        android:layout_width="95dp"
+        android:layout_height="95dp"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:scaleType="fitXY"
+         imagecontrol:border_outside_color="@color/white"
+            imagecontrol:border_thickness="4dp"
+            imagecontrol:border_inside_color="#40ffffff"
+        />
+
+    <TextView
+        android:id="@+id/tv_personal_name"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/riv_personal_head"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/riv_personal_head"
+        android:text="送气工"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <RatingBar
+        android:id="@+id/rb_personal_star"
+        style="@style/MyRatingBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/tv_personal_name"
+        android:layout_centerVertical="true"
+        android:isIndicator="true"
+        android:numStars="5"
+        android:rating="0"
+        android:stepSize="1.0"
+         />
+
+    <TextView
+        android:id="@+id/tv_personal_evlu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/rb_personal_star"
+        android:layout_marginLeft="10dp"
+        android:layout_toRightOf="@+id/rb_personal_star"
+        android:text="0%好评"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+
+    <ImageView
+        android:id="@+id/iv_personal_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:scaleType="fitXY"
+        android:layout_alignBottom="@+id/riv_personal_head"
+        android:layout_alignLeft="@+id/rb_personal_star"
+        android:src="@drawable/personal_phone" />
+
+    <TextView
+        android:id="@+id/tv_personal_phone"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_personal_phone"
+        android:layout_toRightOf="@+id/iv_personal_phone"
+        android:text="13910012100"
+        android:textColor="@color/white"
+        android:textSize="15sp"
+        android:layout_marginLeft="2dp" />
+
+    <RelativeLayout
+        android:id="@+id/rl_personal_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/tv_personal_phone"
+        android:layout_toRightOf="@+id/tv_personal_phone" 
+        android:layout_marginLeft="10dp">
+
+        <ImageView
+            android:id="@+id/iv_personal_select"
+            android:layout_width="wrap_content"
+            android:layout_height="15dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/personal_select" />
+
+        <TextView
+            android:id="@+id/tv_personal_select"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentTop="true"
+            android:layout_toRightOf="@+id/iv_personal_select"
+            android:text="修改"
+            android:textColor="@color/white"
+            android:textSize="15sp" />
+    </RelativeLayout>
+
+    <TextView
+        android:id="@+id/tv_personal_selectHend"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/tv_personal_phone"
+        android:layout_marginLeft="9dp"
+        android:layout_toRightOf="@+id/iv_personal_back"
+        android:text="更换头像"
+        android:textColor="@color/white"
+        android:textSize="15sp" />
+       
+   </RelativeLayout>
+   
+   <ListView 
+       android:id="@+id/lv_top"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="135"
+       android:background="@color/white"
+       android:scrollbars="none"
+       >
+       
+   </ListView>
+   <View 
+       android:layout_width="match_parent"
+       android:layout_height="0.5dp"
+       android:background="#ddd"/>
+    <View 
+       android:layout_width="match_parent"
+       android:layout_height="0.5dp"
+       android:background="#ddd"
+       android:layout_marginTop="10dp"/>
+    
+    <ListView 
+       android:id="@+id/lv_buttom"
+       android:layout_width="match_parent"
+       android:layout_height="0dp"
+       android:layout_weight="180"
+       android:background="@color/white"
+       android:scrollbars="none"
+       >
+       
+   </ListView>
+    <View 
+       android:layout_width="match_parent"
+       android:layout_height="0.5dp"
+       android:background="#ddd"/>
+    <RelativeLayout 
+        android:id="@+id/rl_personal_pwd_select"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="45"
+        android:background="#fff">
+    <ImageView 
+        android:id="@+id/iv_pwd_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:src="@drawable/pwd_select"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="10dp"/>
+
+    <TextView
+        android:id="@+id/tv_pwd_select"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/iv_pwd_select"
+        android:layout_marginLeft="5dp"
+        android:layout_toRightOf="@+id/iv_pwd_select"
+        android:text="修改密码"
+        android:textColor="@color/mormal"
+        android:textSize="15sp"
+        android:layout_centerVertical="true" />
+
+    <ImageView
+        android:id="@+id/jiantou"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignBottom="@+id/iv_pwd_select"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="10dp"
+        android:layout_centerVertical="true"
+        android:src="@drawable/huise_jiantou" />
+        
+    </RelativeLayout>
+   
+   
+   
+  
+</LinearLayout>

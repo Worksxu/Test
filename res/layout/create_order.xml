@@ -1,0 +1,291 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!-- 创建订单界面 -->
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/ll_main"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8"
+    android:orientation="vertical" >
+
+    <ScrollView
+        android:id="@+id/sc_create"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="9" >
+
+        <LinearLayout
+            android:id="@+id/ll_create"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical" >
+
+            <View
+                style="@style/line_style"
+                android:layout_marginTop="10dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_user_type"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#fff" >
+
+                <TextView
+                    android:id="@+id/tv_newuser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="新客户"
+                    android:textColor="#333"
+                    android:textSize="14sp" />
+
+                <ToggleButton
+                    android:id="@+id/tb_user"
+                    android:layout_width="39dp"
+                    android:layout_height="27dp"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/seletor"
+                    android:checked="false"
+                    android:textOff=""
+                    android:textOn="" />
+            </RelativeLayout>
+
+            <View style="@style/line_style" />
+
+            <View
+                style="@style/line_style"
+                android:layout_marginTop="10dp" />
+            <!-- 动态增加布局到这里面 -->
+
+            <RelativeLayout
+                android:id="@+id/rl_user"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff" >
+            </RelativeLayout>
+
+            <View style="@style/line_style" />
+
+            <View
+                style="@style/line_style"
+                android:layout_marginTop="10dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_selectType"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#fff" >
+
+                <TextView
+                    android:id="@+id/tv_selectType"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="选择普通订单"
+                    android:textColor="#333"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_go"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/huise_jiantou" />
+            </RelativeLayout>
+
+            <View style="@style/line_style" />
+
+            <View
+                style="@style/line_style"
+                android:layout_marginTop="10dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_selectTiYanTaoCan"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#fff" >
+
+                <TextView
+                    android:id="@+id/tv_selectTiYanTaoCan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="选择体验套餐"
+                    android:textColor="#333"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/huise_jiantou" />
+            </RelativeLayout>
+
+            <View style="@style/line_style" />
+
+            <View
+                style="@style/line_style"
+                android:layout_marginTop="10dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_selectYouHuiTaoCan"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#fff" >
+
+                <TextView
+                    android:id="@+id/tv_selectYouHuiTaoCan"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="选择优惠套餐"
+                    android:textColor="#333"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/huise_jiantou" />
+            </RelativeLayout>
+
+            <View style="@style/line_style" />
+
+            <View
+                style="@style/line_style"
+                android:layout_marginTop="5dp" />
+
+            <!-- 动态添加选择之后的气罐布局 (表格) -->
+
+            <RelativeLayout
+                android:id="@+id/rl_selectTime"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#fff" >
+
+                <TextView
+                    android:id="@+id/tv_selectTime"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="选择混合套餐"
+                    android:textColor="#333"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_time"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/huise_jiantou" />
+            </RelativeLayout>
+
+            <View style="@style/line_style" />
+
+            <View
+                style="@style/line_style"
+                android:layout_marginTop="5dp" />
+
+            <RelativeLayout
+                android:id="@+id/rl_selectParts"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:background="#fff" >
+
+                <TextView
+                    android:id="@+id/tv_selectParts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="10dp"
+                    android:text="选择混合套餐"
+                    android:textColor="#333"
+                    android:textSize="14sp" />
+
+                <ImageView
+                    android:id="@+id/iv_parts"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:layout_centerVertical="true"
+                    android:layout_marginRight="10dp"
+                    android:background="@drawable/huise_jiantou" />
+            </RelativeLayout>
+
+            <View
+                style="@style/line_style"
+                android:visibility="gone" />
+
+            <RelativeLayout
+                android:id="@+id/rl_type"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="5dp"
+                android:background="#fff" >
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/rl_time"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="#fff" >
+            </RelativeLayout>
+
+            <View
+                style="@style/line_style"
+                android:visibility="gone" />
+        </LinearLayout>
+    </ScrollView>
+
+    <!-- 两个button按钮 -->
+
+    <RelativeLayout
+        android:id="@+id/rl_btn"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_marginTop="10dp"
+        android:layout_weight="1.5" >
+
+        <TextView
+            android:id="@+id/tv_start"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
+            android:layout_alignBaseline="@+id/tv_select"
+            android:layout_alignBottom="@+id/tv_select"
+            android:layout_alignParentRight="true"
+            android:layout_marginRight="20dp"
+            android:background="@drawable/card_style"
+            android:gravity="center"
+            android:text="开始"
+            android:textColor="#fff"
+            android:textSize="16sp" />
+
+        <TextView
+            android:id="@+id/tv_select"
+            android:layout_width="135dp"
+            android:layout_height="45dp"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_marginLeft="23dp"
+            android:background="@drawable/save_start"
+            android:gravity="center"
+            android:text="保存"
+            android:textColor="#333"
+            android:textSize="16sp" />
+    </RelativeLayout>
+
+</LinearLayout>

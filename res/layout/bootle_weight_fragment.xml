@@ -1,0 +1,113 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#f8f8f8" >
+    
+    <RelativeLayout 
+       android:id="@+id/rl_input"
+       android:layout_width="match_parent"
+       android:layout_height="40dp"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       
+       >
+       
+       <EditText 
+           android:id="@+id/et_input"
+           android:layout_width="260dp"
+           android:layout_height="40dp"
+           android:background="@drawable/edittext_style"
+           android:hint="请输入钢瓶钢印号"
+        />
+
+       <Button
+           android:id="@+id/tv_input"
+           android:layout_width="90dp"
+           android:layout_height="40dp"
+           android:layout_alignParentRight="true"
+           android:layout_alignParentTop="true"
+           android:background="@drawable/button_selector"
+           android:gravity="center"
+           android:text="手动添加"
+           android:textColor="#fff"
+           android:textSize="14sp" />
+       	
+   </RelativeLayout>
+   
+   <!-- 用来存放碎片内容的 -->
+
+   <RelativeLayout
+       android:id="@+id/rl_saomiao_fragment"
+       android:layout_width="match_parent"
+       android:layout_height="wrap_content"
+       android:layout_below="@+id/rl_input"
+       android:layout_marginTop="10dp" >
+
+       <LinearLayout
+           android:id="@+id/ll_titles"
+           android:layout_width="match_parent"
+           android:layout_height="50dp"
+           android:layout_centerVertical="true"
+           android:layout_marginLeft="10dp"
+           android:layout_marginRight="10dp"
+           android:background="@drawable/textview_type"
+           android:orientation="horizontal" >
+
+           <TextView
+               android:id="@+id/type"
+               android:layout_width="0dp"
+               android:layout_height="50dp"
+               android:layout_weight="1"
+               android:background="#ddd"
+               android:gravity="center"
+               android:text="规格"
+               android:textColor="#333"
+               android:textSize="14sp" />
+
+           <View
+               android:layout_width="0.5dp"
+               android:layout_height="50dp" />
+
+           <TextView
+               android:id="@+id/num"
+               android:layout_width="0dp"
+               android:layout_height="50dp"
+               android:layout_weight="1"
+               android:background="#ddd"
+               android:gravity="center"
+               android:text="数量"
+               android:textColor="#333"
+               android:textSize="14sp" />
+
+           <View
+               android:layout_width="0.5dp"
+               android:layout_height="50dp" />
+
+           <TextView
+               android:id="@+id/sum"
+               android:layout_width="0dp"
+               android:layout_height="50dp"
+               android:layout_weight="1"
+               android:background="#ddd"
+               android:gravity="center"
+               android:text="序列号"
+               android:textColor="#333"
+               android:textSize="14sp" />
+       </LinearLayout>
+   </RelativeLayout>
+   
+   
+   <ListView 
+       android:id="@+id/lv_content"
+       android:layout_width="match_parent"
+       android:layout_marginLeft="10dp"
+       android:layout_marginRight="10dp"
+       android:layout_height="wrap_content"
+       android:background="@drawable/textview_type"
+       android:layout_below="@+id/rl_saomiao_fragment"
+       android:scrollbars="none">
+       
+   </ListView>
+
+</RelativeLayout>
